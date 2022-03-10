@@ -6,13 +6,6 @@ private double testscore1, testscore2, testscore3;
 
 
 
-public ScoreGrade (double t1, double t2, double t3)
-{
-testscore1 = t1;
-testscore2 = t2;
-testscore3 = t3;
-}
-
 public double CalculateAverage(double testscore1, double testscore2, double testscore3)
 {
     double average;
@@ -21,7 +14,7 @@ public double CalculateAverage(double testscore1, double testscore2, double test
     return average;
 }
 
-public double MaxScore()
+public double MaxScore(double testscore1, double testscore2, double testscore3)
 {
     if (testscore1 > testscore2)
     {

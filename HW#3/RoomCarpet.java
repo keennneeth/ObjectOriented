@@ -20,7 +20,7 @@ return carpetCost;
 
 public String toString()
 {
-String output = size + "The carpet cost is $" + carpetCost*size.GetArea();
+String output = size + ", The carpet cost is $" + carpetCost*size.GetArea();
 return output;
 
 }

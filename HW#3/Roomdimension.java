@@ -32,7 +32,7 @@ public String toString()
 {
 
 output = "The length of the room is " + length + " and the width is " + width
-+ ", the total area is " + GetArea();
++ " , the total area is " + GetArea();
 return output;
 
 
