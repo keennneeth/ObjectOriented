@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 
 public class Test 
@@ -40,6 +41,8 @@ public class Test
         System.out.print("      SIGN UP      ");
         System.out.print("\n___________________");
 
+        ArrayList<String> account = new ArrayList<String>();
+
         System.out.print("\nEnter First Name: ");
         String FirstName = Info.nextLine();
         Register.setFirstName(FirstName);
@@ -64,7 +67,16 @@ public class Test
         String CreditCard = Info.nextLine();
         Register.setCreditCard(CreditCard);
 
-        System.out.println(Register.toString());
+        Customer user = new Customer(FirstName, LastName, Username, Password, Address, CreditCard);
+
+        account.add(FirstName);
+        account.add(LastName);
+        account.add(Username);
+        account.add(Password);
+        account.add(Address);
+        account.add(CreditCard);
+        
+        System.out.print(account);
 
         case 3:
         default:
