@@ -1,12 +1,6 @@
 
-kenny rod Account
-kenny Kenneth#12 shadow
-Address: 39475 ierjd aru
-Credit Card Number: 2347432859320123
-_______________________
-
-A Account
-1 Password@1 gum
-Address: 123
-Credit Card Number: 1234123412341234
+Test Account
+Test Password#1 Test
+Address: 23423 Test
+Credit Card Number: 1256431212435
 _______________________

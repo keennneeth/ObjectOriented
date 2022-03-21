@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -262,7 +263,6 @@ System.exit(0);
 else if (intshopchoice ==2)
 {
                   
-                    //create an array list of available products
                     ArrayList<shop> products = new ArrayList<shop>();
                     System.out.println("Add Items To Cart\n");
                     products.add(new shop(1,"Vans ",59.99));
@@ -271,26 +271,20 @@ else if (intshopchoice ==2)
                     products.add(new shop(4,"Yeezy's ",299.99));
                     products.add(new shop(5,"New Balance ",89.99));
                     products.add(new shop(6,"Converse ",49.99));
-
-
-
                    
-                    // create an array list to store the products for order and quantity of that product ordered
                     ArrayList<shop> order = new ArrayList<>();
                     ArrayList<Integer> quantity = new ArrayList<>();
                    
                     Scanner scan = new Scanner(System.in);
                     int choice, qty;
                     double totalPrice = 0, tax;
-                    final double SALES_TAX_RATE = 0.0625; // sales tax rate
+                    final double SALES_TAX_RATE = 0.0625;
                    
                     boolean valid = false;
-                    // loop that continues until the user exits
                     do
                     {
                         valid = false;
              
-                        // display the menu containing the product details
                         for(int i=0;i<products.size();i++)
                         {
                             System.out.println((i+1)+" - "+products.get(i).getName());
@@ -298,13 +292,11 @@ else if (intshopchoice ==2)
              
                         System.out.println("0 - Proceed to checkout");
                         // input the choice
-                        System.out.print("Enter your choice: ");
+                        System.out.print("\nEnter your choice: ");
                         choice = scan.nextInt();
                        
-                        // check if user wants to exit
                         if(choice != 0)
                         {
-                            // check if the option is valid
                             for(int i=0;i<products.size();i++)
                             {
                                 if(choice == (i+1))
@@ -314,9 +306,8 @@ else if (intshopchoice ==2)
                                 }
                             }
                            
-                            if(valid) // valid product
+                            if(valid)
                             {
-                                // input the quantity
                                 System.out.print("Enter quantity: ");
                                 qty = scan.nextInt();
 
@@ -347,13 +338,10 @@ else if (intshopchoice ==2)
                             }
 
                                
-                                if(qty > 0) // validate quantity
+                                if(qty > 0)
                                 {
-                                    // add product in order list and quantity to quantity list
                                     order.add(products.get(choice-1));
                                     quantity.add(qty);
-                                    
-
 
                                 }else
                                     System.out.println("Invalid quantity to purchase. Please enter quantity > 0");
@@ -364,13 +352,8 @@ else if (intshopchoice ==2)
                     }while(choice != 0 );
                    
                   
-                    // check if user has ordered anything
                     if(order.size() > 0)
                     {
-
-                   
-
-                        // display the order receipt
                         System.out.println("\nRECEIPT");
                         System.out.println("--------------");
                         System.out.printf("%-10s%-30s%-30s%10s\n","Name","Price","Quantity","Total Price");
@@ -429,11 +412,7 @@ else if (intshopchoice ==2)
                 
             
                         }
-                       
-                        // calculate sales tax
                         tax = totalPrice*SALES_TAX_RATE;
-                       
-                        // display the total price before and after tax
                         System.out.printf("\nTotal price(before tax): $%.2f",totalPrice);
                         System.out.printf("\nSales Tax: $%.2f",tax);
                         System.out.printf("\nTotal price(after tax): $%.2f\n",totalPrice+tax);
@@ -451,11 +430,22 @@ else if (intshopchoice ==2)
                   
               }
               
+              
             }
+
+            else 
+
+            {
+                System.out.println("Invalid Choice, Log in again");
+        System.exit(0);
+                
+            }
+              
             
         }
+   
     }
-      
+   
               if(flag==0)
               {
                   System.out.println("Login Failed");
