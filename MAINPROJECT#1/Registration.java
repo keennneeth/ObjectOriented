@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,6 +11,11 @@ import java.util.Calendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+// joptionpane
+
+import javax.swing.*;  
+
 
 public class Registration {
      
@@ -177,6 +181,18 @@ System.exit(0);
             
         }
     
+
+         
+        public static void getInputsFromJOptionPane()
+        {
+            String name;
+            name = JOptionPane.showInputDialog(null,
+             "Please enter your name");
+            JOptionPane.showMessageDialog(null,"Hi "+ name);
+             
+        }
+
+
          
 public void login()
     {
@@ -270,7 +286,7 @@ else if (intshopchoice ==2)
                     products.add(new shop(3,"Adidas ",79.99));
                     products.add(new shop(4,"Yeezy's ",299.99));
                     products.add(new shop(5,"New Balance ",89.99));
-                    products.add(new shop(6,"Converse ",49.99));
+                    products.add(new shop(6,"Converse ",59.99));
                    
                     ArrayList<shop> order = new ArrayList<>();
                     ArrayList<Integer> quantity = new ArrayList<>();
@@ -291,7 +307,6 @@ else if (intshopchoice ==2)
                         }
              
                         System.out.println("0 - Proceed to checkout");
-                        // input the choice
                         System.out.print("\nEnter your choice: ");
                         choice = scan.nextInt();
                        
@@ -368,7 +383,7 @@ else if (intshopchoice ==2)
                             {   
                                 System.out.println("You've exceeded your credit limit");
                                 System.out.println("Only saved what you could afford, Your limit was $500");
-                                System.out.println("Your total was: "+ tax);
+                                System.out.println("Your total was: $"+ totalPrice);
                                 System.exit(0);
                             }
         
